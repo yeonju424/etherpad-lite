@@ -1,1 +1,1 @@
-web: node src/node/server.ts
+web: pnpm run prod

@@ -13,6 +13,8 @@
     "etherpad-healthcheck": "bin/etherpad-healthcheck"
   },
   "scripts": {
+    "heroku-postbuild": "npm install -g pnpm && pnpm install && pnpm run build:etherpad",
+
     "lint": "pnpm --filter ep_etherpad-lite run lint",
     "test": "pnpm --filter ep_etherpad-lite run test",
     "test-utils": "pnpm --filter ep_etherpad-lite run test-utils",
