@@ -13,6 +13,10 @@
     "etherpad-healthcheck": "bin/etherpad-healthcheck"
   },
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/node/server.js",
+    "heroku-postbuild": " pnpm install && pnpm run build:etherpad",
+
     "lint": "pnpm --filter ep_etherpad-lite run lint",
     "test": "pnpm --filter ep_etherpad-lite run test",
     "test-utils": "pnpm --filter ep_etherpad-lite run test-utils",
@@ -31,12 +35,13 @@
     "list-plugins": "pnpm --filter bin run list-plugins"
   },
   "dependencies": {
-    "ep_etherpad-lite": "workspace:./src"
+    "ep_etherpad-lite": "1.8.14"
   },
   "devDependencies": {
-    "admin": "workspace:./admin",
-    "docs": "workspace:./doc",
-    "ui": "workspace:./ui"
+    "admin": "1.4.1",
+    "docs": "0.3.2-canary.0",
+    "ui": "0.2.4",
+    "typescript": "^4.5.4"
   },
   "engines": {
     "node": ">=18.18.2",
@@ -45,7 +50,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ether/etherpad-lite.git"
+    "url": "https://github.com/yeonju424/etherpad-lite.git"
   },
   "version": "2.1.1",
   "license": "Apache-2.0"
