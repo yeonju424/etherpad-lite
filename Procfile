@@ -1,1 +1,1 @@
-web: node src/node/etherpad-lite.js
+web: node src/node/server.ts
