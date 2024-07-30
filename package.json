@@ -13,7 +13,7 @@
     "etherpad-healthcheck": "bin/etherpad-healthcheck"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node etherpad-lite.js",
     "lint": "pnpm --filter ep_etherpad-lite run lint",
     "test": "pnpm --filter ep_etherpad-lite run test",
     "test-utils": "pnpm --filter ep_etherpad-lite run test-utils",
