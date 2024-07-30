@@ -53,7 +53,27 @@ exports.init = async () => {
   }
 };
 
+
+
+// YJ Added: Save Data in New Folder
+const fs = require('fs');
+const path = require('path');
+const rootPath = path.resolve(__dirname, '../../../');
+const sourcePath = path.join(rootPath, 'var/dirty.db');
+const destinationDir = path.join(rootPath, 'LogData'); //change direction to path on the server
+const destinationPath = path.join(destinationDir, 'temp.db'); // Change name!
+
 exports.shutdown = async (hookName: string, context:any) => {
+//Testing: Save data
+  try {
+    // Copy the database file to the local path
+    fs.copyFileSync(sourcePath, destinationPath);
+    logger.log('Database file copied to local path');
+  } catch (error) {
+    logger.error('Error copying database file:', error);
+  }
+
+
   if (exports.db != null) await exports.db.close();
   exports.db = null;
   logger.log('Database closed');
