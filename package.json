@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/node/server.ts",
+    "start": "npm run build && node dist/node/server.js",
     "heroku-postbuild": " pnpm install && pnpm run build:etherpad",
 
     "lint": "pnpm --filter ep_etherpad-lite run lint",
