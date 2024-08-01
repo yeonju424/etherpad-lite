@@ -1,1 +1,1 @@
-web: ts-node src/node/server.ts
+web: node src/node/server.ts
